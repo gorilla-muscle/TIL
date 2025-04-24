@@ -1,11 +1,27 @@
 void main() {
   // lengthプロパティ 文字列の長さを取得
   const String str = "Hello World";
-  print(str.length);
+  print(str.length); // <= 11
 
-  // substringメソッド 指定された位置からの文字列を取得
+  // substringメソッド 指定された位置からの文字列を切り出し
   final String str2 = str.substring(6);
-  print(str2);
+  print(str2); // <= World
+
+  // toUpperCaseメソッド 大文字に変換
+  final String str3 = str.toUpperCase();
+  print(str3); // <= HELLO WORLD
+
+  // toLowerCaseメソッド 小文字に変換
+  final String str4 = str.toLowerCase();
+  print(str4); // <= hello world
+
+  // isEmptyプロパティ 文字列が空であるかどうか判断
+  final bool str5 = str.isEmpty;
+  print(str5); //  <= false
+
+  // isNotEmptyプロパティ 文字列が空でないかどうか判断
+  final bool str6 = str.isNotEmpty;
+  print(str6); // <= true
 
   // 演算子+ 文字列の連結
   final String str7 = str + str;
