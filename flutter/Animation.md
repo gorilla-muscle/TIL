@@ -43,7 +43,36 @@ class _MyHomePageState extends State<MyHomePage> {
           ]
         )
       )
-    )
+    );
   }
 }
 ```
+
+- AnimatedContainer：複数のWidgetを1つのコンテナとしてまとめてアニメーションにする
+- AnimatedSwitcher：2つの異なるWidgetをアニメーションで切り替えが出来る
+
+```dart
+body: Center(
+  child: Column(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: <Widget>[
+      AnimatedContainer(
+        duration: const Duration(seconds: 3),
+        width: _flag ? 100 : 50,
+        height: _flag ? 50: 100,
+        padding: _flag ? const EdgeInsets.all(0) : const EdgeInsets.all(30),
+        margin: _flag ? const EdgeInsets.all(0) : const EdgeInsets.all(30),
+        transform: _flag ? Matrix4.skewX(0.0) : Matrix4.skewX(0.3),
+        color: _flag ? Colors.amber : Colors.grey
+      ),
+      AnimatedSwitcher(
+        duration: const Duration(seconds: 3),
+        child: _flag ? const Text('何もない') : const Icon(Icons.favorite, color: Colors.pinkAccent)
+      )
+    ]
+  )
+)
+```
+
+- EdgeInsets：余白を追加するクラス（列挙型）、paddnig・marginプロパティで設定可能。
+- transform：Flutterウィジェットに対して、様々な変形を適用するためのプロパティ。回転・拡大縮小・傾斜（スキュー）・移動が可能になる。
