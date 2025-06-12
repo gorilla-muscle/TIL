@@ -1,6 +1,8 @@
-p "foo1".object_id
-p "foo1".object_id
+a = ["a", 2, "c"]
 
-p :foo1.object_id
-p :foo1.object_id
-p :foo2.object_id
+p a[0].object_id
+p a[1].object_id
+p a[2].object_id
+
+a[0].replace("b")
+p a
