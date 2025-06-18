@@ -1,3 +1,7 @@
-num = {"foo1" => 1, "foo2" => 2, "foo3" => 3}
+for i in "a".."z"
+  p i
+end
 
-p num[:foo4]
+for i in "a"..."z"
+  p i
+end
